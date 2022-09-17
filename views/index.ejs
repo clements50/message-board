@@ -1,11 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title></title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-    </head>
-    <body>
-        <h1>Mini Message Board</h1> 
-    </body>
+  <head>
+    <title></title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="styles/index.css" rel="stylesheet"/>
+  </head>
+  <body>
+    <div class="header-container">
+      <h1>Mini Message Board</h1>
+    </div>
+        <div class='container'>
+        <% messages.map(message => {%>
+            <div class='message-container'>
+                <div><%= message.message%></div> 
+                <div class='user-container'>-- <%= message.user %> <%= message.date.getFullYear() %></div>
+            </div>
+        <%})%>
+        </div>
+  </body>
 </html>
