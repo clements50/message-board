@@ -29,4 +29,13 @@ router.get("/new", (req, res) => {
   res.render("message-form");
 });
 
+router.post("/new", (req, res) => {
+  messages.push({
+    user: req.body.user_name,
+    message: req.body.entered_message,
+    date: new Date(),
+  });
+  console.log(req);
+  res.redirect("/");
+});
 module.exports = router;
